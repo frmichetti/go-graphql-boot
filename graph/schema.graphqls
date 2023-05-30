@@ -16,6 +16,8 @@ type User {
 
 type Query {
   todos: [Todo!]!
+  questions: [Question]!
+  choices: [Choice]!
 }
 
 input NewTodo {
@@ -25,4 +27,33 @@ input NewTodo {
 
 type Mutation {
   createTodo(input: NewTodo!): Todo!
+  createQuestion(input: QuestionInput!): Question!
+  createChoice(input: ChoiceInput): Choice!
 }
+
+type Question{
+  id: String!
+  question_text: String!
+  pub_date: String!
+  choices: [Choice]
+}
+
+type Choice{
+  id: String!
+  question: Question!
+  question_id: String!
+  choice_text: String!
+}
+
+
+
+input QuestionInput {
+  question_text: String!
+  pub_date: String!
+}
+
+input ChoiceInput {
+  question_id: String!
+  choice_text: String!
+}
+

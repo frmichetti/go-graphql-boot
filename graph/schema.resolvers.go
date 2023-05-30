@@ -16,9 +16,29 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	panic(fmt.Errorf("not implemented: CreateTodo - createTodo"))
 }
 
+// CreateQuestion is the resolver for the createQuestion field.
+func (r *mutationResolver) CreateQuestion(ctx context.Context, input model.QuestionInput) (*model.Question, error) {
+	panic(fmt.Errorf("not implemented: CreateQuestion - createQuestion"))
+}
+
+// CreateChoice is the resolver for the createChoice field.
+func (r *mutationResolver) CreateChoice(ctx context.Context, input *model.ChoiceInput) (*model.Choice, error) {
+	panic(fmt.Errorf("not implemented: CreateChoice - createChoice"))
+}
+
 // Todos is the resolver for the todos field.
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	panic(fmt.Errorf("not implemented: Todos - todos"))
+}
+
+// Questions is the resolver for the questions field.
+func (r *queryResolver) Questions(ctx context.Context) ([]*model.Question, error) {
+	panic(fmt.Errorf("not implemented: Questions - questions"))
+}
+
+// Choices is the resolver for the choices field.
+func (r *queryResolver) Choices(ctx context.Context) ([]*model.Choice, error) {
+	panic(fmt.Errorf("not implemented: Choices - choices"))
 }
 
 // Mutation returns MutationResolver implementation.
